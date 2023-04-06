@@ -9,7 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ServicesController extends AbstractController
 {
-
     #[Route('/services', name: 'app_services')]
     public function index(ServicesRepository $servicesRepository): Response
     {

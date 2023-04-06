@@ -93,66 +93,18 @@
   <div class="container">
     <h5 class="border-top py-5 mb-0">Team</h5>
     <div class="row mx-0 pb-5">
+    {% for team in teams %}
       <div class="col-sm-2 col-4 px-0">
         <div class="card bg-dark text-white hoverable"><img class="card-img" alt="Neoto - Creative Studio Portfolio Template" src="images/member2.png">
           <div class="card-img-overlay">
             <div class="card-title">
-              <div class="title">UX Developer</div>
-              <div class="name">Felice Woods</div>
+              <div class="title">{{ team.Job }}</div>
+              <div class="name">{{ team.FirstName }} {{ team.LastName }}</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-2 col-4 px-0">
-        <div class="card bg-dark text-white hoverable"><img class="card-img" alt="Neoto - Creative Studio Portfolio Template" src="images/member3.png">
-          <div class="card-img-overlay">
-            <div class="card-title">
-              <div class="title">App Developer</div>
-              <div class="name">Lena Brooks</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-2 col-4 px-0">
-        <div class="card bg-dark text-white hoverable"><img class="card-img" alt="Neoto - Creative Studio Portfolio Template" src="images/member4.png">
-          <div class="card-img-overlay">
-            <div class="card-title">
-              <div class="title">UI Designer</div>
-              <div class="name">Vera Blake</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-2 col-4 px-0">
-        <div class="card bg-dark text-white hoverable"><img class="card-img" alt="Neoto - Creative Studio Portfolio Template" src="images/member5.png">
-          <div class="card-img-overlay">
-            <div class="card-title">
-              <div class="title">CTO</div>
-              <div class="name">John Doe</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-2 col-4 px-0">
-        <div class="card bg-dark text-white hoverable"><img class="card-img" alt="Neoto - Creative Studio Portfolio Template" src="images/member6.png">
-          <div class="card-img-overlay">
-            <div class="card-title">
-              <div class="title">CEO</div>
-              <div class="name">Nala Simba</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-2 col-4 px-0">
-        <div class="card bg-dark text-white hoverable"><img class="card-img" alt="Neoto - Creative Studio Portfolio Template" src="images/member7.png">
-          <div class="card-img-overlay">
-            <div class="card-title">
-              <div class="title">Team Coach</div>
-              <div class="name">Carice Stone</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    {% endfor %}
     </div>
   </div>
   <div class="container">
@@ -161,18 +113,11 @@
   <div class="py-3">
     <div class="container">
       <div class="row text-center">
-        <div class="p-4 col-sm col-3 center"><img class="img-fluid" alt="Neoto - Creative Studio Portfolio Template" src="images/logo1.svg"></div>
-        <div class="p-4 col-sm col-3 center"><img class="img-fluid" alt="Neoto - Creative Studio Portfolio Template" src="images/logo2.svg"></div>
-        <div class="p-4 col-sm col-3 center"><img class="img-fluid" alt="Neoto - Creative Studio Portfolio Template" src="images/logo3.svg"></div>
-        <div class="p-4 col-sm col-3 center"><img class="img-fluid" alt="Neoto - Creative Studio Portfolio Template" src="images/logo4.svg"></div>
-        <div class="p-4 col-sm col-3 center"><img class="img-fluid" alt="Neoto - Creative Studio Portfolio Template" src="images/logo5.svg"></div>
-        <div class="p-4 col-sm col-3 center"><img class="img-fluid" alt="Neoto - Creative Studio Portfolio Template" src="images/logo6.svg"></div>
-        <div class="p-4 col-sm col-3 center"><img class="img-fluid" alt="Neoto - Creative Studio Portfolio Template" src="images/logo7.svg"></div>
-        <div class="p-4 col-sm col-3 center"><img class="img-fluid" alt="Neoto - Creative Studio Portfolio Template" src="images/logo8.svg"></div>
-        <div class="p-4 col-sm col-3 center"><img class="img-fluid" alt="Neoto - Creative Studio Portfolio Template" src="images/logo9.svg"></div>
-        <div class="p-4 col-sm col-3 center"><img class="img-fluid" alt="Neoto - Creative Studio Portfolio Template" src="images/logo10.svg"></div>
-        <div class="p-4 col-sm col-3 center"><img class="img-fluid" alt="Neoto - Creative Studio Portfolio Template" src="images/logo11.svg"></div>
-        <div class="p-4 col-sm col-3 center"><img class="img-fluid" alt="Neoto - Creative Studio Portfolio Template" src="images/logo12.svg"></div>
+        {% for LogoClient in clientLogos %}
+        <div class="p-4 col-sm col-3 center">
+          <img class="img-fluid" alt="{{ LogoClient.Alt }}" src="{{ vich_uploader_asset(LogoClient, 'ImageFile') }}">
+        </div>
+        {% endfor %}
       </div>
     </div>
   </div>

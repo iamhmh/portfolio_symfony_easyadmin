@@ -44,17 +44,19 @@
           <div class="border-bottom my-5"></div>
         </div>
       </div>
+      {% for contact in contacts %}
       <div class="row size-sm">
         <div class="col-lg-4 offset-lg-2">
-          <p><strong>Neoto HQ</strong><br>801 Grim Avenue<br>California CA 02110</p>
+          <p><strong>Neoto HQ</strong><br>{{ contact.Address }}</p>
         </div>
         <div class="col-lg-1 offset-lg-1">
-          <p> <strong>Phone<br>Mail<br>Twitter<br></strong></p>
+          <p><strong>Phone<br>Mail<br>Twitter<br></strong></p>
         </div>
         <div class="col-lg-2 text-right">
-          <p>022 15 11 65 46<br>your@email.com<br>@neototemplate</p>
+          <p>{{ contact.Phone }}<br>{{ contact.Email }}<br>{{ contact.Twitter }}</p>
         </div>
       </div>
+      {% endfor %}
     </div>
   </section>
 </main>
