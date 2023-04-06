@@ -117,7 +117,6 @@
         <div class="row justify-content-md-center text-center">
         {% for service in services %}
           <div class="col-sm-3">
-          
             <div class="plan item">
               <h3>{{ service.PlanType }}</h3>
               <div class="price">&euro; {{ service.Price }}<span>/m</span></div>
@@ -126,7 +125,6 @@
                 <li>{{ service.OtherFeatures }}</li>
               </ul><a class="btn" href="#">View plan</a>
             </div>
-            
           </div>
           {% endfor %}
         </div>
