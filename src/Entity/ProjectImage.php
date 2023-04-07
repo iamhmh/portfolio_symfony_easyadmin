@@ -10,7 +10,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ProjectImageRepository::class)]
 #[Vich\Uploadable]
-class ProjectImage implements Serializable
+class ProjectImage
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -100,26 +100,5 @@ class ProjectImage implements Serializable
     public function getImageSize(): ?int
     {
         return $this->ImageSize;
-    }
-
-    
-    public function serialize(): string
-    {
-        return serialize(
-            array(
-                $this->id,
-                $this->ImageName,
-                $this->Alt,
-            )
-        );
-    }
-
-    public function unserialize(string $serialized)
-    {
-        list (
-            $this->id,
-            $this->ImageName,
-            $this->Alt,
-            ) = unserialize($serialized, array('allowed_classes' => false));
     }
 }
